@@ -10,6 +10,11 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 public class HelloController {
 
+    @GetMapping("/")
+    public String home() { // 200(상태코드)
+        return "home";
+    }
+
     @GetMapping("/aws/v3")
     public String hello(@RequestParam(defaultValue = "1") Integer number) {
         if (number == 1) { // info 로그
